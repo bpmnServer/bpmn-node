@@ -13,13 +13,15 @@ For the model above we will walk - through how to execute it programaticaly.
 import { configuration } from '../';
 import { BPMNServer, Logger } from '../';
 
+
 const logger = new Logger({ toConsole: true });
+
 
 test();
 
 async function test() {
 
-    const server = new BPMNServer(configuration, logger);
+    const server = new BPMNServer(configuration, logger, {cron:false});
 
     // we execute a process by name; in this case 'Buy Used Car'
 

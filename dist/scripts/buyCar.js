@@ -26,7 +26,7 @@ const logger = new __2.Logger({ toConsole: true });
 test();
 function test() {
     return __awaiter(this, void 0, void 0, function* () {
-        const server = new __2.BPMNServer(__1.configuration, logger);
+        const server = new __2.BPMNServer(__1.configuration, logger, { cron: false });
         // we execute a process by name; in this case 'Buy Used Car'
         let response = yield server.engine.start('Buy Used Car');
         // let us get the items
