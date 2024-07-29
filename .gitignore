@@ -1,0 +1,17 @@
+﻿/node_modules
+/obj
+/tmp
+./package-lock.json
+*.log
+*.map
+*.d.ts
+**/*.js
+!src/test/**/*.js
+/bin
+/dist
+.env
+*.njsproj
+.vscode
+*.bak
+*.cmd
+*.tsbuildinfo

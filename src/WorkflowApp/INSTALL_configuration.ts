@@ -1,6 +1,6 @@
 
 import {
-	Configuration, ModelsDatastore, ModelsDatastoreDB, JSONDataStore, Logger
+	Configuration, RemoteModelsDatastore, JSONDataStore, Logger
 	, NoCacheManager, CacheManager
 } from './';
 import { MyAppDelegate } from './appDelegate';
@@ -29,7 +29,7 @@ var configuration = new Configuration(
 			new Logger(server);
 		},
 		definitions: function (server) {
-			return new ModelsDatastore(server);
+			return new RemoteModelsDatastore(server);
 		},
 		appDelegate: function (server) {
 			return new MyAppDelegate(server);

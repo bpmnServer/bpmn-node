@@ -1,5 +1,5 @@
 
-import { Configuration, RemoteModelsDatastore, ModelsDatastoreDB, JSONDataStore , Logger  , MemoryDataStore
+import { Configuration, RemoteModelsDatastore,  JSONDataStore , Logger  , MemoryDataStore
 	, NoCacheManager,CacheManager} from './';
 import { MyAppDelegate } from './appDelegate';
 
@@ -36,7 +36,7 @@ var configuration = new Configuration(
 		},
 		cacheManager: function (server) {
 			return new NoCacheManager(server);
-		},
+		}
 
 	});
 

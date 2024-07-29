@@ -1,16 +1,5 @@
 
 
-
-import * as readline from 'readline';
-
-const cl = readline.createInterface(process.stdin, process.stdout);
-const question = function (q) {
-    return new Promise((res, rej) => {
-        cl.question(q, answer => {
-            res(answer);
-        })
-    });
-};
 async function delay(time, result) {
     console.log("delaying ... " + time)
     return new Promise(function (resolve) {
@@ -59,14 +48,6 @@ class AppServices {
             manager=list[0]['manager'];
         
         return manager;
-    }
-    async promptUser(input, context) {
-        console.log('executing prompt user');
-
-        var result = await question("continue?");
-        console.log('result:', result);
-        return null;
-
     }
     async serviceTask(input, context) {
         let item = context.item;

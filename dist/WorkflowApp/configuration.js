@@ -34,7 +34,7 @@ var configuration = new _1.Configuration({
     },
     cacheManager: function (server) {
         return new _1.NoCacheManager(server);
-    },
+    }
 });
 exports.configuration = configuration;
 //# sourceMappingURL=configuration.js.map

@@ -10,15 +10,6 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.AppServices = void 0;
-const readline = require("readline");
-const cl = readline.createInterface(process.stdin, process.stdout);
-const question = function (q) {
-    return new Promise((res, rej) => {
-        cl.question(q, answer => {
-            res(answer);
-        });
-    });
-};
 function delay(time, result) {
     return __awaiter(this, void 0, void 0, function* () {
         console.log("delaying ... " + time);
@@ -64,14 +55,6 @@ class AppServices {
             if (list.length > 0)
                 manager = list[0]['manager'];
             return manager;
-        });
-    }
-    promptUser(input, context) {
-        return __awaiter(this, void 0, void 0, function* () {
-            console.log('executing prompt user');
-            var result = yield question("continue?");
-            console.log('result:', result);
-            return null;
         });
     }
     serviceTask(input, context) {

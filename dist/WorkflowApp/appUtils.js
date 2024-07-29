@@ -86,17 +86,6 @@ class AppUtils {
     }
     notify(_a) {
         return __awaiter(this, arguments, void 0, function* ({ to, template, item, message }) {
-            const users = yield this.getUsers(to);
-            const pug = require('pug');
-            if (!template)
-                template = 'default';
-            users.forEach(user => {
-                const path = this.server.configuration.templatesPath + '/' + template;
-                const msg = pug.renderFile(path + '.message.pug', { item, user, email: user.email, message });
-                const body = pug.renderFile(path + '.body.pug', { item, user, email: user.email, message });
-                console.log("email to", user.userName, user.email, msg, msg, body);
-                this.server.appDelegate.sendEmail(user.email, msg, body);
-            });
         });
     }
     getUsers(toList) {

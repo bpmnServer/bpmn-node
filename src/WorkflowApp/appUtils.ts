@@ -82,22 +82,6 @@ class AppUtils {
     }
 	async notify( {to, template, item, message} ) {
 
-		const users=await this.getUsers(to);
-
-        const pug = require('pug');
-		if (!template)
-			template = 'default';
-
-        users.forEach(user => {
-                const path = this.server.configuration.templatesPath + '/' + template;
-                const msg = pug.renderFile(path + '.message.pug', { item, user,email:user.email, message });
-                const body = pug.renderFile(path + '.body.pug', { item, user,email:user.email, message  })
-                console.log("email to",user.userName,user.email,msg, msg,body);
-                
-                this.server.appDelegate.sendEmail(user.email, msg, body);
-            
-        });
-
 	}
 	async getUsers(toList){
 		let  users=[];

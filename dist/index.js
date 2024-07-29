@@ -18,4 +18,11 @@ exports.configuration = void 0;
 __exportStar(require("bpmn-server"), exports);
 var configuration_1 = require("./WorkflowApp/configuration");
 Object.defineProperty(exports, "configuration", { enumerable: true, get: function () { return configuration_1.configuration; } });
+const _ = require("lodash");
+function component() {
+    const element = document.createElement('div');
+    element.innerHTML = _.join(['Hello', 'webpack'], ' ');
+    return element;
+}
+document.body.appendChild(component());
 //# sourceMappingURL=index.js.map
